@@ -1,11 +1,9 @@
 var wins = 0;
 var losses = 0;
-var winsCount = 0;
-var lossCount = 0;
+var guessedLetters = []; 
 var guessesLeft = 9;
-var guessedLetters = []; /*don't know how to show this on page */
+ 
 
-var userGuess = null;
 
 /* set a function to generate a random letter */
 
@@ -20,8 +18,20 @@ document.onkeyup = function(event) {
 
 /* set userGuess to the key the user pressed */
 	var userGuess = event.key;
+
+			/*  print userGuess on page  */	
+	var guessElem = document.getElementById("userGuesses");
+	guessElem.innerHTML = "Your letters for this game: " + userGuess + (', ');	
 	guessedLetters.push(userGuess);
 
+	var userGuesses = "";
+	guessedLetters.forEach(function(letter) {
+		// var guessedStr = "";
+		userGuesses += letter;
+	});
+
+	// document.getElementById("userGuesses").innerHTML = userGuess;
+	document.getElementById("userGuesses").innerHTML = "Your letters for this game: " + userGuesses + (', ');
 
 
 
@@ -38,9 +48,7 @@ document.onkeyup = function(event) {
 		var guessElem = document.getElementById("guessesLeft");
 		guessElem.innerHTML = "Guesses Left: " + guessesLeft;
 
-		/*  print userGuess on page  */	
-		var guessElem = document.getElementById("userGuesses");
-		guessElem.innerHTML = "Your letters for this game: " + userGuess + (', ');	
+
 		
 		if (userGuess === computerGuess){
 			wins++;
