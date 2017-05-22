@@ -19,19 +19,18 @@ document.onkeyup = function(event) {
 /* set userGuess to the key the user pressed */
 	var userGuess = event.key;
 
-			/*  print userGuess on page  */	
-	var guessElem = document.getElementById("userGuesses");
-	guessElem.innerHTML = "Your letters for this game: " + userGuess + (', ');	
-	guessedLetters.push(userGuess);
 
+	guessedLetters.push(userGuess); /* fills the guessedLetters array with the user input */
+
+
+	/* sets the var userGuesses to the user selection and prints it on the page */
 	var userGuesses = "";
 	guessedLetters.forEach(function(letter) {
-		// var guessedStr = "";
-		userGuesses += letter;
+
+		userGuesses += letter + ', ';
 	});
 
-	// document.getElementById("userGuesses").innerHTML = userGuess;
-	document.getElementById("userGuesses").innerHTML = "Your letters for this game: " + userGuesses + (', ');
+	document.getElementById("userGuesses").innerHTML = "Your letters for this game: " + userGuesses;
 
 
 
