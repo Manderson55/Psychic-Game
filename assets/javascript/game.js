@@ -27,7 +27,7 @@ document.onkeyup = function(event) {
 	var userGuesses = "";
 	guessedLetters.forEach(function(letter) {
 
-		userGuesses += letter + ', ';
+		userGuesses += letter;
 	});
 
 	document.getElementById("userGuesses").innerHTML = "Your letters for this game: " + userGuesses;
